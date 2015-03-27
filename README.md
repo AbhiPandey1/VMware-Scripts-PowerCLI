@@ -1,11 +1,11 @@
 PowerCLI commands to perform the following tasks on VMware vCenter, Vhosts and Virtual machines.
 
-Connect to you vCenter.
-Creata a Datacenter.
-Add vHosts to you Datacenter.
-Create Virtual Machines on your added vHosts.
-Perform Live Migration of Virtual machines across hosts.
-Perform Cold Migration of Virtual Machines across hosts.
-Remove Virtual Machines from your vHosts.
-Remove vHosts from your datacenter
-Remove Datacenter from vCenter
+1.Connect to you vCenter.
+2.Creata a Datacenter.
+3.Add vHosts to you Datacenter.
+4.Create Virtual Machines on your added vHosts.
+5.Perform Live Migration of Virtual machines across hosts.
+6.Perform Cold Migration of Virtual Machines across hosts.
+7.Remove Virtual Machines from your vHosts.
+8.Remove vHosts from your datacenter
+9.Remove Datacenter from vCenter
