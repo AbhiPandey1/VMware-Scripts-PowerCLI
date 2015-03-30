@@ -13,9 +13,10 @@ write-host "Create VM"
 New-VM -Name T04-VM01-ABH-Lin -Template T04-VM01-Lin-Template -VMHost ***.**.***.*** -Datastore (Get-Datastore -VMHost ***.**.***.*** -Name nfs2team04) -Confirm:$false
 
 
-write-host "Enable vMotion"
-Get-VMHost ***.**.***.*** | Get-VMHostNetworkAdapter -VMKernel | Set-VMHostNetworkAdapter -VMotionEnabled -Confirm:$true
-
+write-host "Enable vMotion and Enable Promiscuous Mode"
+Get-VMHost ***.**.***.*** | Get-VMHostNetworkAdapter -VMKernel | Set-VMHostNetworkAdapter -VMotionEnabled $true -Confirm:$true
+Get-VMHost ***.**.***.*** |Get-VirtualSwitch | Get-SecurityPolicy | Set-SecurityPolicy -AllowPromiscuous $true -Confirm:$false
+Get-VMHost ***.**.***.*** |Get-VirtualSwitch | Get-SecurityPolicy | Set-SecurityPolicy -AllowPromiscuous $true -Confirm:$false
 
 
 Start-VM (Get-VM -Name "T04-VM01-ABH-Lin") -Confirm:$false -RunAsync
